@@ -30,7 +30,7 @@ class Basys3:
         os_ports = list_ports.comports()
         validate_port_selection(port_number, os_ports)
         self.__port = configure_port(self.__port)
-        self.__port.port = port_number or 0
+        self.__port.port = os_ports[port_number or 0].device
         open_port(self.__port)
 
     def end(self) -> None:
