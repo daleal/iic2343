@@ -16,6 +16,7 @@ To use the library, import the `Basys3` object directly and use the `begin`, `wr
 from iic2343 import Basys3
 
 instance = Basys3()
+
 instance.begin(port_number=2)  # port_number is optional
 instance.write(1, bytearray([0x00, 0x00, 0x10, 0x16, 0x01]))
 instance.write(2, bytearray([0x00, 0x00, 0x00, 0x18, 0x03]))
@@ -94,14 +95,12 @@ To run the tests, you can use:
 make tests
 ```
 
-Finally, to make a new release of the library, `git switch` to the `master` branch and execute:
+## Releasing
+
+To make a new release of the library, `git switch` to the `master` branch and execute:
 
 ```sh
 make bump! minor
 ```
 
-The word `minor` can be replaced with `patch` or `major`, depending on the type of release. The `bump!` command will bump the versions of the library, create a new branch, add and commit the changes.
-
-## Releasing
-
-To release a new version of the library, just execute a _merge_ to the `stable` branch. Make sure to update the version before merging into `stable`, as `PyPi` will reject packages with duplicated versions.
+The word `minor` can be replaced with `patch` or `major`, depending on the type of release. The `bump!` command will bump the versions of the library, create a new branch, add and commit the changes. Then, just _merge_ that branch to `master`. Finally, execute a _merge_ to the `stable` branch. Make sure to update the version before merging into `stable`, as `PyPi` will reject packages with duplicated versions.
