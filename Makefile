@@ -1,9 +1,7 @@
-POETRY_VERSION = 1.1.5
-
 # Env stuff
 .PHONY: get-poetry
 get-poetry:
-	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 - --version $(POETRY_VERSION)
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
 
 .PHONY: build-env
 build-env:
