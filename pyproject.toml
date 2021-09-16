@@ -1,13 +1,16 @@
 [tool.poetry]
 name = "iic2343"
-version = "0.1.1"
-description = "Write to the Basys3 directly."
+version = "0.2.0"
+description = "Write to the Basys3 ROM directly."
 license = "MIT"
 authors = ["Daniel Leal <dlleal@uc.cl>"]
 maintainers = ["Daniel Leal <dlleal@uc.cl>"]
 readme = "README.md"
 repository = "https://github.com/daleal/iic2343"
 documentation = "https://github.com/daleal/iic2343#readme"
+packages = [
+    { include = "iic2343" },
+]
 exclude = [
     ".github",
     ".flake8",
@@ -31,6 +34,9 @@ mypy = "^0.790"
 pylint = "^2.6.0"
 pytest = "^6.1.1"
 pytest-cov = "^2.10.1"
+
+[tool.poetry.plugins."console_scripts"]
+iic2343 = "iic2343.cli.core:dispatcher"
 
 [tool.poetry.urls]
 "Issue Tracker" = "https://github.com/daleal/iic2343/issues"
