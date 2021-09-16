@@ -1,4 +1,28 @@
-# IIC2343
+<h1 align="center">IIC2343</h1>
+
+<p align="center">
+    <em>
+        Write to the Basys3 ROM directly.
+    </em>
+</p>
+
+<p align="center">
+<a href="https://pypi.org/project/iic2343" target="_blank">
+    <img src="https://img.shields.io/pypi/v/iic2343?label=version&logo=python&logoColor=%23fff&color=306998" alt="PyPI - Version">
+</a>
+
+<a href="https://github.com/daleal/iic2343/actions?query=workflow%3Atests" target="_blank">
+    <img src="https://img.shields.io/github/workflow/status/daleal/iic2343/tests?label=tests&logo=python&logoColor=%23fff" alt="Tests">
+</a>
+
+<a href="https://codecov.io/gh/daleal/iic2343" target="_blank">
+    <img src="https://img.shields.io/codecov/c/gh/daleal/iic2343?label=coverage&logo=codecov&logoColor=ffffff" alt="Coverage">
+</a>
+
+<a href="https://github.com/daleal/iic2343/actions?query=workflow%3Alinters" target="_blank">
+    <img src="https://img.shields.io/github/workflow/status/daleal/iic2343/linters?label=linters&logo=github" alt="Linters">
+</a>
+</p>
 
 ## Installation
 
