@@ -1,9 +1,10 @@
 """Core module for the package. It holds the main object to be used."""
 
-from typing import Optional
+from typing import List, Optional
 
 import serial
 from serial.tools import list_ports
+from serial.tools.list_ports_common import ListPortInfo
 
 from iic2343.utils import (
     can_be_written,
@@ -25,12 +26,16 @@ class Basys3:
     def __init__(self) -> None:
         self.__port = serial.Serial()
 
+    @property
+    def available_ports(self) -> List[ListPortInfo]:
+        """Get available ports."""
+        return list_ports.comports()
+
     def begin(self, port_number: Optional[int] = None) -> None:
         """Configure and initialize the port to be used."""
-        os_ports = list_ports.comports()
-        validate_port_selection(port_number, os_ports)
+        validate_port_selection(port_number, self.available_ports)
         self.__port = configure_port(self.__port)
-        self.__port.port = os_ports[port_number or 0].device
+        self.__port.port = self.available_ports[port_number or 0].device
         open_port(self.__port)
 
     def end(self) -> None:
