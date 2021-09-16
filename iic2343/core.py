@@ -29,7 +29,7 @@ class Basys3:
     @property
     def available_ports(self) -> List[ListPortInfo]:
         """Get available ports."""
-        return list_ports.comports()
+        return sorted(list_ports.comports())
 
     def begin(self, port_number: Optional[int] = None) -> None:
         """Configure and initialize the port to be used."""
